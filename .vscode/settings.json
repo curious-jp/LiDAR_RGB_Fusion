@@ -1,0 +1,18 @@
+{
+  "python.autoComplete.extraPaths": [
+    "/home/curious/ros2_ws/install/sick_wagen/local/lib/python3.10/dist-packages",
+    "/home/curious/sick_scan_ws/install/sick_scan_xd/local/lib/python3.10/dist-packages",
+    "/home/curious/bag_ros2_ws/install/ros2bag_tools/lib/python3.10/site-packages",
+    "/home/curious/bag_ros2_ws/install/rosbag2_tools/lib/python3.10/site-packages",
+    "/opt/ros/humble/lib/python3.10/site-packages",
+    "/opt/ros/humble/local/lib/python3.10/dist-packages"
+  ],
+  "python.analysis.extraPaths": [
+    "/home/curious/ros2_ws/install/sick_wagen/local/lib/python3.10/dist-packages",
+    "/home/curious/sick_scan_ws/install/sick_scan_xd/local/lib/python3.10/dist-packages",
+    "/home/curious/bag_ros2_ws/install/ros2bag_tools/lib/python3.10/site-packages",
+    "/home/curious/bag_ros2_ws/install/rosbag2_tools/lib/python3.10/site-packages",
+    "/opt/ros/humble/lib/python3.10/site-packages",
+    "/opt/ros/humble/local/lib/python3.10/dist-packages"
+  ]
+}

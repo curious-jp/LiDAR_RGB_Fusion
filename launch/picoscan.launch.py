@@ -1,0 +1,63 @@
+from launch import LaunchDescription
+from launch_ros.actions import Node
+
+def generate_launch_description():
+    return LaunchDescription([
+        Node(
+            package='sick_scan_xd',
+            executable='sick_generic_caller',
+            name='picoScan',
+            namespace='picoScan',
+            output='screen',
+            parameters=[
+                {"scanner_type": "sick_picoscan"},
+                {"hostname": "192.168.0.3"},
+                {"udp_receiver_ip": "192.168.0.142"},
+                {"port": "2118"},
+                {"udp_port":2117},
+                {"all_segments_min_deg": -138.0},
+                {"all_segments_max_deg": 138.0},
+                {"publish_frame_id": "world"},
+                {"publish_laserscan_segment_topic": "laserscan_segment"},
+                {"publish_laserscan_fullframe_topic": "laserscan_fullframe"},
+                {"udp_input_fifolength": 20},
+                {"msgpack_output_fifolength": 20},
+                {"verbose_level": 1},
+                {"measure_timing": True},
+                {"export_csv": False},
+                {"export_udp_msg": False},
+                {"logfolder": ""},
+                {"send_udp_start": False},
+                {"send_udp_start_string": "magicalActivate"},
+                {"udp_timeout_ms": 60000},
+                {"scandataformat": 2},
+                {"imu_enable": False},
+                {"imu_udp_port": 7504},
+                {"imu_latency_microsec": 0},
+                {"add_transform_xyz_rpy": "0,0,0,0,0,0"},
+                {"sopas_tcp_port": "2111"},
+                {"start_sopas_service": True},
+                {"send_sopas_start_stop_cmd": True},
+                {"sopas_cola_binary": False},
+                {"sopas_timeout_ms": 5000},
+                {"client_authorization_pw": "F4724744"},
+                {"host_read_filtersettings": True},
+                {"host_FREchoFilter": 2},
+                {"host_set_FREchoFilter": True},
+                {"msgpack_validator_enabled": False},
+                {"msgpack_validator_verbose": 1},
+                {"msgpack_validator_discard_msgpacks_out_of_bounds": True},
+                {"msgpack_validator_check_missing_scandata_interval": 9},
+                {"msgpack_validator_required_echos": "0 1 2"},
+                {"msgpack_validator_azimuth_start": -138.0},
+                {"msgpack_validator_azimuth_end": 138.0},
+                {"msgpack_validator_elevation_start": 0.0},
+                {"msgpack_validator_elevation_end": 0.0},
+                {"msgpack_validator_valid_segments": "0 1 2 3 4 5 6 7 8"},
+                {"msgpack_validator_layer_filter": "1"},
+                {"laserscan_layer_filter": "1"},
+                {"custom_pointclouds": "cloud_360"},
+                {"cloud_360": "coordinateNotation=3 updateMethod=0 fields=x,y,z,i,echo,reflector echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/picoScan/cloud_360 frameid=world publish=1"}
+            ]
+        )
+    ])
