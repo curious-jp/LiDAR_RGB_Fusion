@@ -87,7 +87,14 @@ def generate_launch_description():
         ],
     )
 
+    foxglove_bridge_node = Node(
+        package="foxglove_bridge",
+        executable="foxglove_bridge",
+        output="screen",
+    )
+
     ld.add_action(multiscan_node)
     ld.add_action(static_tf_node)
     ld.add_action(camera_node)
+    ld.add_action(foxglove_bridge_node)
     return ld
